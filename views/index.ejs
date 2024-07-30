@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Perguntas</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <hr>
+        <h1>Perguntas</h1>
+        <hr>
+        <a href="/perguntar" class="btn-primary">Perguntar</a>
+        <hr>
+        <% pergunta.forEach(pergunta => { %> 
+            <div class="card">
+                <div class="card-header">
+                    <h3><%= pergunta.titulo %></h3>
+                </div>
+                <div class="card-body">
+                    <p><%= pergunta.descricao %></p>
+                </div>
+                <hr>
+                <div class="card-body">
+                    <button class="btn-primary">Responder</button>
+                </div>
+                
+            </div>
+        <% }) %>
+    </div>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>
